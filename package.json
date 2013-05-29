@@ -1,0 +1,11 @@
+{
+	"name": "core",
+	"description": "antlerpig.com server",
+	"version": "0.1.1",
+	"dependencies": {
+		"express": "3.0.2",
+        "mysql": "2.0.0",
+        "connect-mysql-session": "0.1.3",
+        "request": "2.21.0"
+	}
+}

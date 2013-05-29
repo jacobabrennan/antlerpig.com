@@ -1,0 +1,22 @@
+<div id="comment_section" class="comment_section">
+    <div class="comment_form">
+        <div<core[no_auth]>>
+            Sign in to leave a comment.
+            <a id="signin" href="#" class="persona-button orange signin"><span>Sign In</span></a>
+        </div>
+        <form action="blog/new_comment" method="post"<core[auth]>>
+            <!-- https://developer.mozilla.org/en-US/docs/HTML/Element/form -->
+            <fieldset class="new_comment">
+                <legend>Comment</legend>
+                <input name="post_id" type="hidden" value="<core[id]>"/>
+                <div class="form_body">
+                    <textarea class="comment_body" name="body" placeholder="Write your comments here =^_^="></textarea>
+                </div>
+                <div class="form_buttons">
+                    <button type="submit">Submit</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <core[comments]>
+</div>

@@ -1,0 +1,167 @@
+@font-face{
+    font-family: columbus;
+    src: url('/rsc/style/resources/columbus.ttf');
+}
+@font-face{
+    font-family: comforta;
+    src: url('/rsc/style/resources/comfortaa.ttf');
+}
+body{
+    font-family: georgia, san-serif;
+	margin: 0em;
+	padding: 0em;
+	background-image:  url('/rsc/background_1.jpg');
+	background-attachment: fixed;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+h1, h2, h3, h4, h5, h6, #main_navigation li a{
+    font-family: columbus, sans-serif;
+    font-weight: normal;
+}
+a:link, a:visited{
+	color: rgb(102, 0, 0);
+}
+a:link:hover{
+	color: rgb(255, 0, 0);
+}
+#page{
+	width: 850px;
+	margin: 0em auto;
+    padding: 0em;
+	padding-bottom: 1em;
+}
+#top_strip{
+    text-align: right;
+}
+#top_strip a:link{
+    display: inline-block;
+    padding: 4px;
+    margin: 0em 1em;
+}
+a.header_home{
+	width: 200px;
+	height: 200px;
+	font-size: 0px;
+	background-image: url('/rsc/figure_5b.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+a.header_home, div.post_container, #main_navigation li a, nav.pagination .newer, nav.pagination .older, #about, #top_strip, #login_form, #main_content > div{
+	display: block;
+	border: 1px solid rgba(34,0,0,0.4);
+	border-radius: 10px;
+	background-color: white; /*rgb(230,230,230);*/
+	box-shadow:
+		2px 5px 10px rgba(34,0,0,1),
+		inset 0px 0px 20px rgba(153,119,136,0.75),
+		inset 1px 15px 25px rgba(255,255,255,0.5)
+	;
+}
+#top_strip{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: 0px;
+    margin: 0em 1em 1em 1em;
+    width: 600px;
+}
+#main_navigation ul, #main_navigation ul li{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#main_navigation li a{
+	text-decoration: none;
+	line-height: 40px;
+	font-size: 35px;
+	/*font-weight: bold;*/
+	color: rgb(34,0,0);
+	margin-top: 16px;
+	text-align: right;
+	padding-right: 30px;
+	width: 170px;
+	height: 40px;
+}
+#main_navigation li a:hover{
+	color: white;
+	background-color: rgb(34,0,0);
+}
+#main_header{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0em 1em;
+}
+#main_content{
+	margin: 0em 1em;
+	width: 600px;
+	margin: 0em;
+	display: inline-block;
+}
+div.post_container{
+	margin-left: 0em;
+	margin-bottom: 1em;
+}
+article.post{
+	margin: 1em;
+}
+article.post header{
+	border-bottom: 1px dotted rgb(34,0,0);
+}
+article.post header h1, article.post header h2{
+	margin: 0em;
+}
+article.post header a{
+	color: rgb(34,0,0);
+	text-decoration: none;
+}
+article.post .body{
+	text-align: justify;
+}
+article.post footer{
+	border-top: 1px dotted rgb(34,0,0);
+}
+div.slugline{
+    font-size: smaller;
+}
+div.comment_section{
+	margin: 1em;
+}
+div.comment{
+	margin:  1em;
+	border-top: 1px solid rgb(34,0,0);
+}
+div.comment .body{
+	text-align: justify;
+}
+div.comment .slugline{
+	border-bottom: 1px dotted rgb(34,0,0);
+	margin-bottom: 1em;
+}
+nav.pagination .newer:before{
+    content: '<-- ';
+}
+nav.pagination .older:after{
+    content: ' -->';
+}
+nav.pagination .newer, nav.pagination .older{
+    background: white;
+	font-weight: bold;
+	font-size: larger;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 1em;
+    border-radius: 5px;
+	text-decoration: none;
+}
+nav.pagination .newer:hover, nav.pagination .older:hover{
+	background-color: rgb(34,0,0);
+	color: white;
+}
+#about div{
+	margin: 10px;
+}
+#about h1{
+	margin-left: 10px
+}

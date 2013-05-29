@@ -1,0 +1,666 @@
+/*
+ * Document Structure:
+ * 		Global Style Settings first,
+ * 		Followed by size specific settings.
+ */
+
+/*
+ * Global Style Settings
+ */
+@font-face{
+    font-family: columbus;
+    src: url('/rsc/style/resources/columbus.ttf');
+}
+/*@font-face{
+    font-family: league_gothic_ie;
+	src: url(league_gothic.eot);
+}*/
+html, body{
+    height: 100%;
+}
+div.http_error{
+    height: 100%;
+    padding: 1em;
+    background: white;
+    border-radius: 5px;
+    margin: 2em;
+}
+div.http_error .error_code{
+    text-align: center;
+    font-size: xx-large;
+}
+body{
+	font-family: georgia, sans-serif;
+	background-color: rgb( 33,  33,  17);
+    background-image: url("/rsc/style/resources/bg_noise_black.png");
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+    /*color: white;*/
+	color: black;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: columbus;
+    color: #330;
+}
+a:link, a:visited{
+    color: #8e1a40;
+}
+a:link{
+    text-decoration: none;
+}
+#page{
+    /*background: red; /*rgba(17, 17, 17, 1);*/
+    /*background: rgb(230, 240, 255);*/
+    text-align: left;
+    position: relative;
+    height: 100%;
+    margin: 0px auto;
+    min-height: 100%;
+}
+#main_header{
+    background: white;
+    font-family: georgia;
+}
+#main_navigation{
+	
+}
+#main_content{
+}
+#main_footer{
+}
+#meatboy_1{
+    background-image: url("/rsc/style/resources/cat_meatboy_1.png");
+	pointer-events: none;
+}
+#meatboy_2{
+    background-image: url("/rsc/style/resources/cat_meatboy_2.png")
+}
+#main_navigation li a:hover {
+	background-color: #b86b6b;
+	color: white;
+}
+#main_content{
+	padding: 20px 10px;
+	background: #ccb;
+	position: relative;
+	border-radius: 0px 0px 5px 5px;
+}
+#main_content h1{
+	text-align: right;
+	margin: 0em;
+    margin-right: 60px;
+}
+.post, .comment{
+	background-color: white;
+    background-image: url("/rsc/style/resources/bg_noise_black.png");
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 20px;
+	/* ace room sun mesa snore woman orc wax cream rover seven one norms a
+	 * was soon moon venus mars ruse reverse verse sever severe were norse
+	 * saw sow sown owl own moan zero onerous seem scream crave omen 
+	 * acemnorsuvwxz bdfhiklt gjpqy
+	 */
+}
+.post .title{
+	margin: 0em;
+}
+/*.post a:link{ ??
+    content: "-";
+    text-emphasis: accent;
+    font-weight: bolder;
+}*/
+.post a:link:hover, .comment a:link:hover{
+    text-decoration: underline;
+}
+.post .slugline, .comment .slugline{
+	border-bottom: 1px dashed #ccb;
+	margin-top: 0em;
+	font-size: smaller;
+	margin-bottom: 1em;
+}
+.post .body, .comment .body{
+	text-align: justify;
+    background: white;
+}
+.post .feedback{
+	border-top: 1px dashed #ccb;
+	margin-bottom: 0em;
+	font-size: smaller;
+	margin-top: 1em;
+}
+.post .feedback .facebook:before{
+    content: url('/rsc/style/resources/icon_facebook.png');
+    margin: 0px 5px;
+}
+.comment_section{
+    display: block;
+}
+.comment_form, .comment{
+    width: 85%;
+    position: relative;
+    left: 10%;
+    max-width: 600px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#main_footer{
+	margin: 0em;
+	margin-top: 10px;
+	border-radius: 5px 5px 0px 0px;
+	width: 100%;
+	background: #ccb;
+	padding-right: 0px;
+	font-family: monospace;
+	text-transform: uppercase;
+}
+#main_footer span{
+	margin: 0em 1em;
+}
+#main_footer .sig{
+	float: right;
+	font-style: italic;
+}
+#main_footer .sig:before{
+	content: '~~';
+}
+
+
+nav.pagination{
+    width: 100%;
+}
+nav.pagination .newer:before{
+    content: '<-- ';
+}
+nav.pagination .newer{
+    background: white;
+    display: inline-block;
+    padding: 4px;
+    margin: 1em;
+    border-radius: 5px;
+}
+nav.pagination .older:after{
+    content: ' -->';
+}
+nav.pagination .older{
+    background: white;
+    display: inline-block;
+    padding: 4px;
+    margin: 1em;
+    border-radius: 5px;
+}
+nav.pagination .newer:hover{
+	background-color: #b86b6b;
+	color: white;
+}
+nav.pagination .older:hover{
+	background-color: #b86b6b;
+	color: white;
+}
+.new_post div{
+    margin-bottom: 1em;
+}
+.new_post label{
+    width: 10%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+}
+.new_post input, .new_post textarea{
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+}
+.new_post textarea{
+    height: 20em;
+}
+.new_post .form_buttons{
+    position: relative;
+    left: 11%;
+}
+.comment_form{
+    border-radius: 5px;
+    background-color: white;
+    background-image: url("/rsc/style/resources/bg_noise_black.png");
+    margin-top: 1em;
+    padding-top: 1em;
+}
+.comment_form fieldset{
+    border: 0px solid black;
+}
+.comment_form .comment_body{
+    border: 0px solid black;
+    width: 100%;
+    vertical-align: top;
+    height: 10em;
+}
+.comment_form .form_buttons{
+}
+/*
+ * Size Specific Style Settings
+ */
+
+/* Large Wide Screens */
+@media only screen and (min-width: 1000px){
+	#page{
+		width: 980px;
+		border: 5px solid black;
+		border-top: 0px;
+		border-bottom: 0px;
+	}
+    #top_strip{
+        margin: 0em;
+        margin-bottom: 10px;
+        border-radius: 0px 0px 5px 5px;
+        width: 100%;
+        height: 1em;
+        background: white;
+    }
+    #main_header{
+        position: relative;
+        height: 340px;
+        border-radius: 5px 5px 0px 0px;
+        border-bottom: 1px dashed #888;
+    }
+    #meatboy_1{
+        position: absolute;
+        width: 537px;
+        height: 259px;
+        left: 0px;
+        bottom: -40px;
+        z-index: 2;
+    }
+    #meatboy_2{
+        position: absolute;
+        width: 305px;
+        height: 244px;
+        right: 0px;
+        top: 0px;
+        z-index: 2;
+    }
+    #main_header a.header_home{
+		display: block;
+		background-image: url("/rsc/antler_pig_title_1.png");
+        position: absolute;
+		background-size: 100% 100%;
+		font-size: 0px;
+        margin: 0px;
+        top: 80px;
+        left: 440px;
+		width: 355px;
+		height: 211px;
+        z-index: 3;
+		border: 0px solid white;
+    }/*
+    #main_header h1:after{
+        display: block;
+        content: "Astraea Research Station --";
+        font-size: 8pt;
+    }
+    #main_header h1:before{
+        text-align: right;
+        display: block;
+        content: "-- Main Belt";
+        font-size: 8pt;
+    }*/
+    #main_navigation{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        text-align: right;
+        z-index: 1;
+    }
+    #main_navigation ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    #main_navigation li{
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+    }
+    #main_navigation li a{
+        display: block;
+        margin: 0px;
+		padding: 8px 15px;
+        font-size: large;
+		text-decoration: none;
+		font-weight: bold;
+		border-left: 1px solid #000;
+        border-top: 1px solid #000;
+    }
+	.post .body{
+		padding-left: 5em;
+		padding-right: 3em;
+	}
+	/* Comic */
+	.comic_navigation a{
+		display: inline-block;
+		background: white;
+		padding: 4px 10px;
+		border-radius: 2px;
+		border: 1px black solid;
+	}
+	.comic_navigation a:hover{
+		background: #330;
+		color: white;
+	}
+	div.comic{
+		width: 100%;
+		text-align: center;
+	}
+	.comic_navigation span{
+		font-size: x-large;
+		margin: 2em;
+	}
+	#about{
+		min-height: 300px;
+	}
+	#about .info{
+		width: 650px;
+		text-align: justify;
+	}
+	#about .figure{
+		position: absolute;
+		right: 3em;
+		margin-top: 1em;
+	}
+}
+
+/* Medium Screens (37/49) */
+@media only screen and (min-width:760px) and (max-width:999px){
+	#page{
+		width: 740px;
+		border: 3px solid black;
+		border-top: 0px;
+		border-bottom: 0px;
+	}
+    #top_strip{
+        margin: 0em;
+        margin-bottom: 10px;
+        border-radius: 0px 0px 5px 5px;
+        width: 100%;
+        height: 1em;
+        background: white;
+    }
+    #main_header{
+        position: relative;
+        height: 220px;
+        border-radius: 5px 5px 0px 0px;
+        border-bottom: 1px dashed #888;
+    }
+    #meatboy_1{
+        position: absolute;
+        width: 537px;
+        height: 259px;
+        left: 0px;
+        bottom: -40px;
+        z-index: 2;
+    }
+    #meatboy_2{
+		display: none;
+    }
+    #main_header a.header_home{
+		display: block;
+		background: url("/rsc/antler_pig_title_1.png");
+		background-size: 100% 100%;
+        position: absolute;
+		font-size: 0px;
+        margin: 0px;
+        top: 50px;
+        right: 80px;
+		width: 255px;
+		height: 152px;
+        z-index: 3;
+		border: 0px solid white;
+    }
+    #main_navigation{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        text-align: right;
+        z-index: 1;
+    }
+    #main_navigation ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    #main_navigation li{
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+    }
+    #main_navigation li a{
+        display: block;
+        margin: 0px;
+		padding: 8px 15px;
+        font-size: large;
+		text-decoration: none;
+		font-weight: bold;
+		border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+	.post .body{
+		padding-left: 5em;
+		padding-right: 3em;
+	}
+	/* Comic */
+	.comic_navigation a{
+		display: inline-block;
+		background: white;
+		padding: 4px 10px;
+		border-radius: 2px;
+		border: 1px black solid;
+	}
+	.comic_navigation a:hover{
+		background: #330;
+		color: white;
+	}
+	div.comic{
+		width: 100%;
+		text-align: center;
+	}
+	.comic img{
+		width: 100%;
+	}
+	.comic_navigation span{
+		font-size: x-large;
+		margin: 2em;
+	}
+}
+
+/* Tablet and Small Screens (23/49) */
+@media only screen and (min-width:480px) and (max-width:759px){
+	#page{
+		width: 460px;
+		border: 2px solid black;
+		border-top: 0px;
+		border-bottom: 0px;
+	}
+    #top_strip{
+		display: none;
+    }
+    #main_header{
+        position: relative;
+        height: 190px;
+        border-bottom: 1px dashed #888;
+    }
+    #meatboy_1{
+        position: absolute;
+		background-position: -150px;
+		background-repeat: no-repeat;
+        width: 537px;
+        height: 259px;
+        left: 0px;
+        bottom: -40px;
+        z-index: 2;
+    }
+    #meatboy_2{
+		display: none;
+    }
+    #main_header a.header_home{
+		display: block;
+		background: url("/rsc/antler_pig_title_1.png");
+		background-size: 100% 100%;
+        position: absolute;
+		font-size: 0px;
+        margin: 0px;
+        top: 40px;
+        left: 240px;
+		width: 200px;
+		height: 119px;
+        z-index: 3;
+		border: 0px solid white;
+    }
+    #main_navigation{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        text-align: right;
+        z-index: 1;
+    }
+    #main_navigation ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    #main_navigation li{
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+    }
+    #main_navigation li a{
+        display: block;
+        margin: 0px;
+		padding: 4px 10px;
+		text-decoration: none;
+		font-weight: bold;
+		border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+	/* Comic */
+	.comic_navigation a{
+		display: inline-block;
+		background: white;
+		padding: 4px 5px;
+		border-radius: 2px;
+		border: 1px black solid;
+		font-size: small;
+	}
+	.comic_navigation a:hover{
+		background: #330;
+		color: white;
+	}
+	.comic_navigation span{
+		font-size: large;
+		margin: 1em;
+	}
+	div.comic{
+		width: 100%;
+		text-align: center;
+	}
+	.comic img{
+		width: 400px;
+	}
+}
+
+@media only screen and (max-width:479px){
+	body{
+		font-size: smaller;
+		border: 0px;
+	}
+	#page{
+		width: 322px;
+	}
+    #top_strip{
+		display: none;
+    }
+    #main_header{
+        position: relative;
+        height: 150px;
+        border-bottom: 1px dashed #888;
+    }
+    #meatboy_1{
+        position: absolute;
+		background-position: 0px;
+		background-size: 269px, 130px;
+		background-repeat: no-repeat;
+        width: 269px;
+        height: 130px;
+        left: 0px;
+        bottom: -20px;
+        z-index: 2;
+    }
+    #meatboy_2{
+		display: none;
+    }
+    #main_header a.header_home{
+		display: block;
+		background: url("/rsc/antler_pig_title_1.png");
+		background-size: 100% 100%;
+        position: absolute;
+		font-size: 0px;
+        margin: 0px;
+        top: 35px;
+        left: 180px;
+		width: 135px;
+		height: 80px;
+        z-index: 3;
+		border: 0px solid white;
+    }
+    #main_navigation{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 100%;
+        text-align: right;
+        z-index: 1;
+    }
+    #main_navigation ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    #main_navigation li{
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+    }
+    #main_navigation li a{
+        display: block;
+        margin: 0px;
+		padding: 4px 4px;
+		text-decoration: none;
+		font-weight: bold;
+		border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+	/* Comic */
+	.comic_navigation a{
+		display: inline-block;
+		background: white;
+		padding: 4px 2px;
+		border-radius: 2px;
+		border: 1px black solid;
+		font-size: x-small;
+	}
+	.comic_navigation a:hover{
+		background: #330;
+		color: white;
+	}
+	.comic_navigation span{
+	}
+	div.comic{
+		width: 100%;
+		text-align: center;
+	}
+	.comic img{
+		width: 100%;
+	}
+}

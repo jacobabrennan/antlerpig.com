@@ -1,0 +1,41 @@
+<h1>Blog: New Post</h1>
+<form id="new_post" action="add" method="post">
+    <!-- https://developer.mozilla.org/en-US/docs/HTML/Element/form -->
+    <fieldset class="new_post">
+        <legend>New Post</legend>
+        <input name="delete" type="hidden" value="0" />
+        <input name="preview" type="hidden" value="0" />
+        <input name="id" type="hidden" value="<core[id]>" />
+        <div class="form_title">
+            <label for="title">Title:</label>
+            <input class="post_title" name="title" type="text" value="<core[title]>" />
+        </div>
+        <div class="form_body">
+            <label for="body">Body:</label>
+            <textarea class="post_body" name="body"><core[body]></textarea>
+        </div>
+        <div class="form_buttons">
+            <button name="preview_button" type="button">Preview</button>
+            <button type="submit">Save</button>
+            <core[delete]>
+            <script>
+                var post_form = document.getElementById('new_post');
+                post_form.elements['preview_button'].addEventListener('click', function (){
+                    post_form.elements['preview'].value = 1;
+                    post_form.submit();
+                    // If a form control (such as a submit button) has a name or id of submit it will mask the form's submit method.
+                    // https://developer.mozilla.org/en-US/docs/DOM/form.submit
+                    post_form.elements['preview'].value = 0;
+                }, false);
+                var delete_button = post_form.elements['delete_button'];
+                if(delete_button){
+                    delete_button.addEventListener('click', function (){
+                        post_form.elements['delete'].value = 1;
+                        post_form.submit();
+                        post_form.elements['delete'].value = 0;
+                    })
+                }
+            </script>
+        </div>
+    </fieldset>
+</form>
