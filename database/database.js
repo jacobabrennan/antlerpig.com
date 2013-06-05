@@ -148,21 +148,25 @@ module.exports = (function (){
                 var post_id = parseInt(parameters.post_id);
                 var query;
                 var count_query;
+                var limit = 5;
                 var skip_amount = Math.max(0, parameters.skip);
+                if(parameters.limit){
+                    limit = Math.max(0, parseInt(parameters.limit));
+                }
                 if(id){
                     query = 'select * from '+table+' where id = '+id+';';
                     count_query = 'select count(*) from '+table+' where id = '+id+';';
                 } else if(post_id){
-                    query = 'select * from '+table+' where post_id = '+post_id+' order by created desc limit 5;';
+                    query = 'select * from '+table+' where post_id = '+post_id+' order by created desc limit '+limit+';';
                     count_query = 'select count(*) from '+table+' where post_id = '+post_id+';';
                 }
                 else if(skip_amount){
                     console.log(skip_amount)
-                    query = 'select * from '+table+' order by created desc limit 5 offset '+skip_amount+';';
+                    query = 'select * from '+table+' order by created desc limit '+limit+' offset '+skip_amount+';';
                     console.log(query)
                     count_query = 'select count(*) from '+table+';';
                 } else{
-                    query = "select * from "+table+" order by created desc limit 5;";
+                    query = 'select * from '+table+' order by created desc limit '+limit+';';
                     count_query = 'select count(*) from '+table+';';
                 }
                 //console.log(query)

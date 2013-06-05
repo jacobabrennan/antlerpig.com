@@ -531,7 +531,7 @@ module.exports = (function (){
                 this.database.retrieve("posts", parameters, callback);
             },
             retrieve_comments: function (query, callback){
-                var parameters = {};
+                var parameters = {limit: 50};
                 if(query.post_id){
                     var post_id = parseInt(query.post_id, 10);
                     if(post_id){
