@@ -306,7 +306,7 @@ module.exports = (function (){
                                     callback('No Comments To Display');
                                 } else{
                                     var number_text = comment_count.toString()+' comment';
-                                    if(comment_count == 1){
+                                    if(comment_count != 1){
                                         number_text += 's';
                                     }
                                     callback(number_text);
