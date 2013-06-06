@@ -79,7 +79,20 @@ module.exports = (function (){
                     document.text = parsed_header + document.text;
                     parser.parse(req, themes.current_theme.footer_data, parse_function, function (parsed_footer){
                         document.text += parsed_footer;
-                        callback(document);
+                        if(document.code){
+                            switch(document.code){
+                            case 303:
+                                res.setHeader('Location', document.url);
+                                res.send(document.code, document.body);
+                            break
+                            default:
+                                callback(document);
+                                return
+                            break
+                            }
+                        } else{
+                            callback(document);
+                        }
                     })
                 });
             },
@@ -111,7 +124,8 @@ module.exports = (function (){
                         }
                     break;
                     case "persona":
-                        replacement = '<script>var persona_email = '+(auth_email? ('"'+auth_email+'"') : 'null')+';</script>';
+                        replacement =  '<script>var persona_email = '+(auth_email? ('"'+auth_email+'"') : 'null')+';</script>';
+                        replacement += '<script src="rsc/js/persona.js"></script>';
                     break;
                 }
                 parse_callback(replacement);

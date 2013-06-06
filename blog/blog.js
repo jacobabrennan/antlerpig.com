@@ -193,8 +193,10 @@ module.exports = (function (){
 						if(auth_email && comment.post_id && comment.body){
 							comment.author = auth_email;
 							blog.add_comment(comment, function(){
-								var redirect_href = "/blog?post="+comment.post_id;
+								var redirect_href = "/blog?post="+comment.post_id+'#comment_section';
 								document.text = '<h1>Posted</h1><div class="post_message">Your message has been posted. <a href="'+redirect_href+'">Click here to continue</a></div>';
+                                document.code = 303;
+                                document.url = redirect_href;
 								callback(document);
 							});
 						} else{
@@ -222,8 +224,8 @@ module.exports = (function (){
                             switch(req.body.action){
                                 case 'comment_delete':{
                                     blog.delete_comment({'id': req.body.comment_id}, function (){});
-                                    res.setHeader('Location', '/blog?post='+req.body.post_id);
-                                    res.send(303, 'Logged in. Redirecting to main site.');
+                                    res.setHeader('Location', '/blog?post='+req.body.post_id+'#comment_section');
+                                    res.send(303, 'Deleted. Redirecting back to the page.');
                                 }
                             }
                         }
