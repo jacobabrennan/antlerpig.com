@@ -438,7 +438,27 @@ module.exports = (function (){
                         }
                     break;
                     case "body":
-                        replacement = comment.body;
+                        // Allow for some simple formatting:
+                        //   * Newline(\n) -> <br>
+                        //   * Url(http:blah) -> <a href="url">
+                        // Url Regex:
+                        var comment_string = '';
+                        if(comment.body){
+                            comment_string = comment.body;
+                        }
+                        comment_string = comment_string.replace(/\n/g, function (match){
+                            return ' \n<br>';
+                        });
+                        var url_regex = /\(?(?:(http|https|ftp|byond|irc):\/\/)?(?:((?:[^\W\s]|\.|[:]{1})+)@{1})?((?:www.)?(?:[^\W\s]|\.)+[\.][^\W\s]{2,4}|localhost(?=\/)|\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(?::(\d*))?([\/]?[^\s\?]*[\/]{1})*(?:\/?([^\s\n\?\[\]\{\}\#]*(?:(?=\.)){1}|[^\s\n\?\[\]\{\}\.\#]*)?([\.]{1}[^\s\?\#]*)?)?(?:\?{1}([^\s\n\#\[\]]*))?([\#][^\s\n]*)?\)?/gi;
+                        comment_string = comment_string.replace(url_regex, function (match){
+                            var anchor_text = match;
+                            var href = match;
+                            if(match.charAt(0) == '(' && match.charAt(match.length-1) == ')'){
+                                href = match.slice(1,-1);
+                            }
+                            return '<a target="_blank" href="'+href+'">'+anchor_text+'</a>';
+                        });
+                        replacement = comment_string;
                     break;
                     default:
                         replacement = undefined;
@@ -493,16 +513,22 @@ module.exports = (function (){
             add_comment: function (comment, callback){
                 var keys = ['author', 'post_id', 'body'];
                 if(!comment.post_id){
-					console.log('==================================\nNo post_id')
                     callback();
                     return;
                 };
+                var split_at_newline = comment.body.split('\n');
+                var join_array = [];
+                for(var line_index = 0; line_index < split_at_newline.length; line_index++){
+                    var indexed_line = split_at_newline[line_index];
+                    indexed_line = encoder.htmlEncode(indexed_line);
+                    join_array.push(indexed_line)
+                }
+                var encoded_string = join_array.join('\n');
                 var values = [
                     comment.author,
                     parseInt(comment.post_id),
-                    encoder.htmlEncode(comment.body)
+                    encoded_string
                 ];
-				console.log('======================================\nInserting');
                 this.database.insert("comments", keys, values, callback);
             },
             delete_post: function (post, callback){
