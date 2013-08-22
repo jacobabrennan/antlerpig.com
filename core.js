@@ -5,6 +5,7 @@ module.exports = (function (){
     var express = require('express');
     var connect_mysql_session = require('connect-mysql-session');
 	var request = require('request');
+	var socketio = require('socket.io');
     var mime = require('express/node_modules/send/node_modules/mime');
     mime.define({
         'video/webm': ['webm'],
@@ -39,8 +40,12 @@ module.exports = (function (){
             website_title: {value: theme_configuration.website_title}
         }));
         var about = require('./about/about.js');
+		var fennel = require('./fennel/fennel.js');
         database.setup(database_configuration, function (){});
-        server.listen(port);
+        //server.listen(port);
+		var http_server = require('http').createServer(server);
+		http_server.listen(port);
+		var io = socketio.listen(http_server, { log: true });
         var ender = function(req, res, next){
             if(res._error){
                 res.send(res._error, res._storage);
@@ -95,13 +100,8 @@ module.exports = (function (){
 					method: 'POST'
 				};
 				request(options, function (err, resp, res_body) {
-								console.log('=================================')
-					console.log('Session: '+JSON.stringify(req.session))
-					console.log('Session: '+JSON.stringify(req.session.auth))
-								console.log('=================================')
 					var respJSON = JSON.parse(res_body);
 					req.session.auth = {email: respJSON.email};
-					console.log(JSON.stringify(req.session.authentication))
 					req.session.save();
 					res.send(res_body);
 				});
@@ -123,6 +123,7 @@ module.exports = (function (){
             }
             dont_know_what_to_call_this('blog', this.blog);
             dont_know_what_to_call_this('about', about);
+            dont_know_what_to_call_this('fennel', fennel);
             dont_know_what_to_call_this('', this.blog);
         });
         console.log('Core Server Listening on Port '+port);

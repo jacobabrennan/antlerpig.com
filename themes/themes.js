@@ -99,7 +99,7 @@ module.exports = (function (){
             parse: function (req, capture, parse_callback){
                 var document = req.document;
                 var self = this;
-                var auth_email
+                var auth_email;
                 if(req.session && req.session.auth && req.session.auth.email){
                     auth_email = req.session.auth.email
                 }

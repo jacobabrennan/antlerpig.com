@@ -1,24 +1,23 @@
 @font-face{
-    font-family: columbus;
-    src: url('/rsc/style/resources/columbus.ttf');
-}
-@font-face{
-    font-family: comforta;
-    src: url('/rsc/style/resources/comfortaa.ttf');
+    font-family: lobster;
+    src: url('/rsc/style/resources/lobster.otf');
 }
 body{
-    font-family: georgia, san-serif;
+    font-family: sans-serif;
 	margin: 0em;
 	padding: 0em;
-	background-image:  url('/rsc/background_9.jpg');
+	background-image:  url('/rsc/background_11.jpg');
 	/*background-attachment: fixed;*/
 	/*background-size: 100% auto;*/
 	/*background-repeat: no-repeat;*/
 	/*background-position: center;*/
 }
 h1, h2, h3, h4, h5, h6, #main_navigation li a{
-    font-family: columbus, sans-serif;
+    font-family: lobster, sans-serif;
     font-weight: normal;
+}
+h1{
+    font-size: 35px;
 }
 a:link, a:visited{
 	color: rgb(102, 0, 0);
@@ -33,7 +32,7 @@ a:link:hover{
 	padding-bottom: 1em;
 }
 #top_strip{
-    text-align: right;
+    text-align: left;
 }
 #top_strip > *{
 	vertical-align: middle;
@@ -56,15 +55,6 @@ a.header_home, div.post_container, #main_navigation li a, nav.pagination .newer,
 	display: block;
 	border: 1px solid transparent; /*rgba(34,0,0,0.4);*/
 	border-radius: 10px;
-	background-color: rgba(0,0,0,0.03); /*white; /*rgb(230,230,230);*/
-	box-shadow:
-		/*2px 5px 10px rgba(34,0,0,1),
-		inset 0px 0px 20px rgba(153,119,136,0.75),
-		inset 1px 15px 25px rgba(255,255,255,0.5)*/
-		/*2px 5px 10px rgba(0,0,0,1)*/
-		inset 2px 2px 5px rgba(0,0,0,0.2)
-		/*inset 1px 15px 5px rgba(255,255,255,0.9)*/
-	;
 }
 #top_strip{
     border-top-left-radius: 0px;
@@ -85,10 +75,8 @@ a.header_home, div.post_container, #main_navigation li a, nav.pagination .newer,
 	/*font-weight: bold;*/
 	color: rgb(34,0,0);
 	margin-top: 16px;
-	text-align: right;
-	padding-right: 30px;
-	width: 170px;
-	height: 40px;
+	text-align: center;
+	width: 200px;
 }
 #main_navigation li a:hover{
 	color: white;
@@ -124,6 +112,9 @@ article.post header a{
 }
 article.post .body{
 	text-align: justify;
+}
+article.post .body a:link img{
+    border: solid #660000 1px;
 }
 article.post footer{
 	border-top: 1px dotted rgb(34,0,0);
